@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Predicción</title>
+
+    <!-- Font Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Main css -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            padding: 20px;
+        }
+        .sign-in {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+        }
+        .signin-content {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .signin-form {
+            padding: 50px;
+            flex: 1;
+        }
+        .signin-form h2 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+        .signin-form .form-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .signin-form .form-group {
+            margin-bottom: 25px;
+        }
+        .signin-form .form-group label {
+            color: #333;
+        }
+        .signin-form .form-group a {
+            text-decoration: none;
+            color: #3f51b5;
+            transition: color 0.3s ease;
+        }
+        .signin-form .form-group a:hover {
+            color: #303f9f;
+        }
+        .signin-image {
+            flex: 1;
+            background: url('{{ image_url }}') no-repeat center center;
+            background-size: cover;
+        }
+        .signin-image figure {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+        }
+        .signin-image img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Prediction status -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="" alt=""></figure>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Predicción</h2>
+                        <p>Predicción del modelo <b>RandomForest</b>.</p>
+                        <br><br>
+                        <p>{{ prediction }}</p>
+                        <br><br>
+                        <div class="form-group">
+                            <label for="agree-term" class="label-agree-term">
+                                <a href="{{ url_for('home') }}" class="term-service">Regresar</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
